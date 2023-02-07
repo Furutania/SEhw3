@@ -1,0 +1,17 @@
+Create database cheesecake;
+use cheesecake
+create table ORDERS(
+    ORDERID int,
+    MONTH char(3),
+    DATE int,
+    QUANTITY int,
+    TOPPING varChar(255),
+    NOTES varChar(512),
+    CONSTRAINT CHK_topping CHECK (TOPPING='plain' OR TOPPING='chocolate' or TOPPING='cherry')
+    );
+select COUNT(ORDERID) from ORDERS
+
+select count(ORDERID) from ORDERS where month ='feb';
+
+
+insert into ORDERS values(62, "SEP", 21, 2, "Cherry", "Do you remember, the 21st night of september");
