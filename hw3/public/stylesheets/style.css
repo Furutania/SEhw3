@@ -1,0 +1,102 @@
+/* Austen Furutani CS 341 HW1 */
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: whitesmoke;
+  background-color: burlywood;
+  text-align: center;
+  font-size: 40px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+}
+h3 {
+  margin-left: 45%;
+  text-align: center;
+  font-family: Verdana;
+  display: inline-block;
+}
+li{
+  text-align: center;
+  margin-left: auto;
+  font-family: Verdana;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type=submit] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  p {
+    text-align: center;
+    font-family: Verdana;
+    font-size: 20px;
+}
+th{
+  text-align: left;
+  font-family: Verdana;
+}
+
+/* FROM w3schools */
+/* Dropdown Button */
+.dropbtn {
+background-color: burlywood;
+color: black;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+max-height:200px;
+overflow:scroll; 
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
