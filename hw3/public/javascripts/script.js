@@ -33,6 +33,13 @@ function checkMessage(){
 //Parameters: Value selected
 //Return: None
 function changeMonth(month){
+    var data;
     document.getElementById("monthDrop").innerText = month;
+    listId = ["cherryCount", "chocoCount", "plainCount"]
+    $.post('/orders', function(result) {
+        data = result["data"]
+        for (let i = 0; i < data.length;i++){
+            document.getElementById(listId[i]).innerHTML  = data[i]["quantity"] + " " + data[i]["topping"];
+        }
+    })
 }
-    
