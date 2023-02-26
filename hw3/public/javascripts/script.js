@@ -3,8 +3,9 @@
 //parametrs: None
 //Return: None
 function checkMessage(){
-    text = document.getElementById("specialOrder").value;
-    if (text.includes("vegan")){
+    let notes = document.getElementById("specialOrder").value;
+    const d = new Date();
+    if (notes.includes("vegan")){
         alert("ATTENTION: All our cheesecakes contain dairy");
     }
     else{
@@ -25,9 +26,18 @@ function checkMessage(){
         orderNotes.style.display = "none";
         
         //Creating the message to be displayed
-        message = "Thanks for placing your order: \n" + quantity + " " + flavor + " Cheescake(s) \n Notes: " + text;
+        message = "Thanks for placing your order: \n" + quantity + " " + flavor + " Cheescake(s) \n Notes: " + notes;
         document.getElementById("notes").innerText = message;
+        //calling post, to with order info and date
+        $.post('/neworder', {month: d.getMonth(), day: d.getDate(), quantity: quantity,
+            topping: flavor, notes: notes}, function(result) {
+            console.log(result);
+        });
+
     }
+
+
+
 }
 //Changes text to selected value
 //Parameters: Value selected
@@ -35,10 +45,9 @@ function checkMessage(){
 function changeMonth(month){
     document.getElementById("monthDrop").innerText = month;
     listId = ["cherryCount", "chocoCount", "plainCount"]
-    $.post('/orders', function(result) {
-        console.log(result)
+    $.post('/orders', {month: month}, function(result) {
         for (let i = 0; i < result.length;i++){
             document.getElementById(listId[i]).innerHTML  = result[i]["quantity"] + " " + result[i]["topping"];
         }
-    })
+    });
 }
